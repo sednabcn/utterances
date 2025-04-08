@@ -1,0 +1,55 @@
+/* utterances.scss (inside custom-theme folder) */
+
+/* Import Primer and other necessary styles */
+@import "@primer/css/base/index";  // Primer base styles
+@import "@primer/css/markdown/index";  // Primer markdown styling
+@import "@primer/css/forms/form-control";  // Form controls for styling
+
+/* Container styles for the Utterances widget */
+.utterances {
+  max-width: 100%;                /* Ensure full width */
+  margin-left: auto;              /* Center the container */
+  margin-right: auto;
+  padding: 10px;
+  background-color: var(--background-color);  /* Use theme color */
+  color: var(--text-color);       /* Text color based on theme */
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+/* Dark theme override */
+[data-theme="dark"] .utterances {
+  background-color: var(--dark-background-color);  /* Dark mode background */
+  color: var(--dark-text-color);                   /* Dark mode text color */
+  border-color: var(--dark-border-color);
+}
+
+/* Styling for comments, input areas, and buttons */
+.utterances button {
+  background-color: var(--button-green);  /* Button styling for custom theme */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.utterances .markdown-body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Apply other custom styles specific to the comment section */
+.utterances input, .utterances textarea {
+  border: 1px solid var(--comment-border);
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* Syntax highlighting specific styles for code blocks */
+.utterances pre {
+  background-color: var(--syntax-background);
+  padding: 10px;
+  font-size: 14px;
+  color: var(--syntax-text-color);
+}

@@ -1,0 +1,69 @@
+/* syntax.scss */
+
+/* Import syntax highlighting utilities */
+@import "@primer/css/markdown/index";  // Base markdown styling
+
+/* Custom syntax highlighting overrides */
+code, pre {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 4px;
+  border-radius: 3px;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Custom styling for dark theme */
+[data-theme="dark"] {
+  code, pre {
+    background-color: #333333;
+    color: #e1e4e8;
+  }
+}
+
+
+
+/* syntax.scss */
+
+/* Markdown Code */
+.markdown-body code {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+}
+
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: var(--light-bg);
+  border-radius: 3px;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Optional: Purple accents to match your sidebar */
+.markdown-body blockquote {
+  padding: 0 1em;
+  color: #6a737d;
+  border-left: 0.25em solid var(--primary-purple);
+}
+
+/* Links */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

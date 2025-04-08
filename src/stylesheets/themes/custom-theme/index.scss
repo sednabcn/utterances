@@ -1,0 +1,71 @@
+/* index.scss */
+
+
+/* Import theme variables */
+@import "./variables";  // Import theme variables first
+
+/* Import Primer CSS and other necessary styles */
+@import "@primer/css/base/index";  // Primer base styles
+@import "@primer/css/markdown/index";  // Primer markdown styling
+@import "@primer/css/forms/form-control";  // Form controls for styling
+@import "@primer/css/buttons/index";  // Buttons, if needed
+@import "@primer/css/utilities/details";  // Utilities
+
+/* Import custom theme styling */
+@import "./utterances";  // Utterances container styles
+@import "./syntax";      // Optional: Syntax highlighting styles
+
+/* Base colors */
+:root {
+  --background-color: #ffffff;
+  --text-color: #24292e;
+  --border-color: #e1e4e8;
+  --primary-purple: #6200ea;  /* Adjust to match your exact purple */
+  --accent-teal: #00b3a4;
+  --button-green: #8bc34a;
+  --link-color: #0366d6;
+  --sidebar-text: #ffffff;
+  --light-bg: #f6f8fa;
+  --comment-border: #d1d5da;
+}
+
+/* Dark theme colors */
+[data-theme="dark"] {
+  --background-color: #181818;
+  --text-color: #ffffff;
+  --border-color: #333333;
+  --primary-purple: #6200ea;
+  --accent-teal: #00b3a4;
+  --button-green: #8bc34a;
+  --link-color: #0366d6;
+  --sidebar-text: #ffffff;
+  --light-bg: #2d2d2d;
+  --comment-border: #444444;
+}
+/* Syntax highlighting colors */
+  --syntax-background: #f0f0f0;
+  --syntax-text-color: #333333;
+}
+/* Add other custom overrides for body, button styles, etc. */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+button {
+  background-color: var(--button-green);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+
+
+/* Main container for Utterances */
+.utterances {
+  max-width: 100%;
+}
