@@ -140,11 +140,13 @@ export function loadIssueByTerm(term: string) {
     return response.json();
   }).then(results => {
     if (results.total_count === 0) {
+      // Add a graceful handling for when no open issues are found
+      console.info(`No open issues match "${term}". All matching issues may be closed.`);
       return null;
     }
     if (results.total_count > 1) {
-      // tslint:disable-next-line:no-console
-      console.warn(`Multiple issues match "${q}".`);
+      // Make this a less alarming info message instead of a warning
+      console.info(`Multiple issues match "${term}".`);
     }
     term = term.toLowerCase();
     for (const result of results.items) {
@@ -152,8 +154,7 @@ export function loadIssueByTerm(term: string) {
         return result;
       }
     }
-    // tslint:disable-next-line:no-console
-    console.warn(`Issue search results do not contain an issue with title matching "${term}". Using first result.`);
+    console.info(`Issue search results do not contain an issue with title matching "${term}". Using first result.`);
     return results.items[0];
   });
 }
